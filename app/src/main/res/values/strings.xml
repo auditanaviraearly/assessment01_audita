@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">assessment1</string>
+    <string name="home_text">Hello, welcome to HerbalCure!</string>
+
+    <!-- Herbal Names -->
+    <string name="herbal_jahe">Ginger</string>
+    <string name="herbal_kunyit">Turmeric</string>
+    <string name="herbal_lengkuas">Galangal</string>
+    <string name="herbal_temulawak">Java Ginger</string>
+    <string name="herbal_serai">Lemongrass</string>
+
+    <!-- Herbal Descriptions -->
+    <string name="desc_jahe">Beneficial for boosting the immune system.</string>
+    <string name="desc_kunyit">Helps reduce inflammation and improve digestion.</string>
+    <string name="desc_lengkuas">Good for digestive health and pain relief.</string>
+    <string name="desc_temulawak">Helps increase appetite and support liver health.</string>
+    <string name="desc_serai">Has antibacterial properties and is good for detoxification.</string>
+
+    <!-- Dropdown Categories -->
+    <string name="category_history">History</string>
+    <string name="category_usage">Uses</string>
+    <string name="category_side_effects">Side Effects</string>
+    <string name="category_how_to_use">How to Use</string>
+
+    <!-- Herbal Details by Category -->
+    <!-- Ginger -->
+    <string name="history_jahe">Ginger has been used for thousands of years in Asia as a traditional medicine.</string>
+    <string name="usage_jahe">Ginger is beneficial for boosting the immune system and warming the body.</string>
+    <string name="side_effects_jahe">Excessive consumption may cause stomach irritation and acid reflux.</string>
+    <string name="how_to_use_jahe">Ginger can be consumed as tea, extract, or as a cooking spice.</string>
+
+    <!-- Turmeric -->
+    <string name="history_kunyit">Turmeric has been used in Ayurveda and traditional Chinese medicine.</string>
+    <string name="usage_kunyit">Turmeric has anti-inflammatory properties and can improve digestion.</string>
+    <string name="side_effects_kunyit">May cause digestive issues if consumed excessively.</string>
+    <string name="how_to_use_kunyit">Turmeric can be consumed as herbal drinks, supplements, or as a cooking spice.</string>
+
+    <!-- Galangal -->
+    <string name="history_lengkuas">Galangal has long been used in traditional Indonesian medicine.</string>
+    <string name="usage_lengkuas">Galangal is good for digestive health and can relieve pain.</string>
+    <string name="side_effects_lengkuas">Excessive consumption may cause stomach irritation.</string>
+    <string name="how_to_use_lengkuas">Galangal is used in cooking, herbal drinks, or herbal tea.</string>
+
+    <!-- Java Ginger -->
+    <string name="history_temulawak">Java ginger is a native Indonesian plant often used in herbal medicine.</string>
+    <string name="usage_temulawak">Java ginger helps boost appetite and supports liver health.</string>
+    <string name="side_effects_temulawak">May have a laxative effect if consumed excessively.</string>
+    <string name="how_to_use_temulawak">Java ginger can be consumed as herbal drinks, extracts, or tea blends.</string>
+
+    <!-- Lemongrass -->
+    <string name="history_serai">Lemongrass has been used since ancient times as a natural remedy and spice.</string>
+    <string name="usage_serai">Lemongrass has antibacterial properties and is good for detoxification.</string>
+    <string name="side_effects_serai">May cause allergic reactions in some individuals.</string>
+    <string name="how_to_use_serai">Lemongrass can be used in tea, cooking, or as an essential oil.</string>
+
+</resources>

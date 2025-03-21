@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">assessment1</string>
+    <string name="home_text">Hallo, Selamat datang di HerbalCure!</string>
+
+    <!-- Nama Herbal -->
+    <string name="herbal_jahe">Jahe</string>
+    <string name="herbal_kunyit">Kunyit</string>
+    <string name="herbal_lengkuas">Lengkuas</string>
+    <string name="herbal_temulawak">Temulawak</string>
+    <string name="herbal_serai">Serai</string>
+
+    <!-- Deskripsi Herbal -->
+    <string name="desc_jahe">Bermanfaat untuk meningkatkan daya tahan tubuh.</string>
+    <string name="desc_kunyit">Membantu mengurangi peradangan dan meningkatkan pencernaan.</string>
+    <string name="desc_lengkuas">Baik untuk kesehatan pencernaan dan mengurangi nyeri.</string>
+    <string name="desc_temulawak">Membantu meningkatkan nafsu makan dan kesehatan hati.</string>
+    <string name="desc_serai">Memiliki sifat antibakteri dan baik untuk detoksifikasi.</string>
+
+    <!-- Kategori Dropdown -->
+    <string name="category_history">Sejarah</string>
+    <string name="category_usage">Kegunaan</string>
+    <string name="category_side_effects">Efek Samping</string>
+    <string name="category_how_to_use">Cara Penggunaan</string>
+
+    <!-- Detail Herbal berdasarkan Kategori -->
+    <!-- Jahe -->
+    <string name="history_jahe">Jahe telah digunakan sejak ribuan tahun lalu di Asia sebagai obat tradisional.</string>
+    <string name="usage_jahe">Jahe bermanfaat untuk meningkatkan daya tahan tubuh dan menghangatkan badan.</string>
+    <string name="side_effects_jahe">Konsumsi berlebihan dapat menyebabkan iritasi lambung dan naiknya asam lambung.</string>
+    <string name="how_to_use_jahe">Jahe bisa dikonsumsi dalam bentuk teh, ekstrak, atau sebagai bumbu masakan.</string>
+
+    <!-- Kunyit -->
+    <string name="history_kunyit">Kunyit telah digunakan dalam pengobatan Ayurveda dan tradisional Tiongkok.</string>
+    <string name="usage_kunyit">Kunyit memiliki sifat anti-inflamasi dan dapat meningkatkan pencernaan.</string>
+    <string name="side_effects_kunyit">Dapat menyebabkan gangguan pencernaan jika dikonsumsi berlebihan.</string>
+    <string name="how_to_use_kunyit">Kunyit dapat dikonsumsi dalam bentuk jamu, suplemen, atau sebagai bumbu masakan.</string>
+
+    <!-- Lengkuas -->
+    <string name="history_lengkuas">Lengkuas telah digunakan sejak lama dalam pengobatan tradisional Indonesia.</string>
+    <string name="usage_lengkuas">Lengkuas baik untuk kesehatan pencernaan dan dapat mengurangi nyeri.</string>
+    <string name="side_effects_lengkuas">Konsumsi berlebihan dapat menyebabkan iritasi lambung.</string>
+    <string name="how_to_use_lengkuas">Lengkuas digunakan dalam masakan, jamu, atau teh herbal.</string>
+
+    <!-- Temulawak -->
+    <string name="history_temulawak">Temulawak adalah tanaman asli Indonesia yang sering digunakan dalam jamu.</string>
+    <string name="usage_temulawak">Temulawak membantu meningkatkan nafsu makan dan mendukung kesehatan hati.</string>
+    <string name="side_effects_temulawak">Dapat menyebabkan efek pencahar jika dikonsumsi berlebihan.</string>
+    <string name="how_to_use_temulawak">Temulawak bisa dikonsumsi sebagai jamu, ekstrak, atau campuran teh.</string>
+
+    <!-- Serai -->
+    <string name="history_serai">Serai telah digunakan sejak zaman kuno sebagai obat alami dan rempah.</string>
+    <string name="usage_serai">Serai memiliki sifat antibakteri dan baik untuk detoksifikasi tubuh.</string>
+    <string name="side_effects_serai">Dapat menyebabkan reaksi alergi pada beberapa orang.</string>
+    <string name="how_to_use_serai">Serai dapat digunakan dalam teh, masakan, atau minyak esensial.</string>
+
+</resources>
