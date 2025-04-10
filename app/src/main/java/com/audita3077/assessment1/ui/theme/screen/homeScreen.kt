@@ -6,6 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -23,8 +25,6 @@ import com.audita3077.assessment1.ui.theme.Assessment1Theme
 import kotlin.random.Random
 import com.audita3077.assessment1.model.HerbalItem
 
-
-// daftar herbal berdasarkan bahasa yang dipilih
 fun getHerbalList(language: Language): List<HerbalItem> {
     return if (language == Language.ID) {
         listOf(
@@ -45,7 +45,6 @@ fun getHerbalList(language: Language): List<HerbalItem> {
     }
 }
 
-// Enum untuk jenis pengurutan
 enum class SortType {
     AZ, ZA, RANDOM
 }
@@ -60,8 +59,9 @@ fun HomeScreen(
     var searchText by remember { mutableStateOf("") }
     var sortType by remember { mutableStateOf(SortType.AZ) }
     var isDropdownExpanded by remember { mutableStateOf(false) }
-    val herbalList = getHerbalList(selectedLanguage)
+    var showInfoDialog by remember { mutableStateOf(false) }
 
+    val herbalList = getHerbalList(selectedLanguage)
     val filteredList = herbalList
         .filter { it.name.contains(searchText, ignoreCase = true) }
         .let { list ->
@@ -75,12 +75,22 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(if (selectedLanguage == Language.ID) "Tanaman Herbal" else "Herbal Plants") },
+                title = {
+                    Text(if (selectedLanguage == Language.ID) "Tanaman Herbal" else "Herbal Plants")
+                },
                 actions = {
                     TextButton(onClick = {
                         onLanguageChange(if (selectedLanguage == Language.EN) Language.ID else Language.EN)
                     }) {
                         Text(if (selectedLanguage == Language.ID) "ID" else "EN")
+                    }
+
+                    IconButton(onClick = { showInfoDialog = true }) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = if (selectedLanguage == Language.ID) "Informasi" else "Information"
+
+                        )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -92,16 +102,16 @@ fun HomeScreen(
         }
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding).padding(16.dp)) {
-            // Search Bar
             TextField(
                 value = searchText,
                 onValueChange = { searchText = it },
-                placeholder = { Text(if (selectedLanguage == Language.ID) "Cari herbal..." else "Search herbs...") },
+                placeholder = {
+                    Text(if (selectedLanguage == Language.ID) "Cari herbal..." else "Search herbs...")
+                },
                 modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(8.dp))
-
 
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
                 Button(onClick = { isDropdownExpanded = true }) {
@@ -137,14 +147,15 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Herbal List
             LazyColumn {
                 items(filteredList) { item ->
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(8.dp)
-                            .clickable { navController.navigate(Screen.Detail.createRoute(item.name)) },
+                            .clickable {
+                                navController.navigate(Screen.Detail.createRoute(item.name))
+                            },
                         shape = MaterialTheme.shapes.medium
                     ) {
                         Column(
@@ -173,6 +184,38 @@ fun HomeScreen(
                 }
             }
         }
+
+        // Dialog informasi
+        if (showInfoDialog) {
+            AlertDialog(
+                onDismissRequest = { showInfoDialog = false },
+                title = {
+                    Text(
+                        if (selectedLanguage == Language.ID) "Tentang Aplikasi" else "About the App"
+                    )
+                },
+                text = {
+                    Column {
+                        Text(
+                            if (selectedLanguage == Language.ID)
+                                "Nama: Audita Navira Early\n" +
+                                        "NIM: 6706223077\n\n" +
+                                        "Aplikasi ini menampilkan daftar tanaman herbal lengkap dengan manfaatnya. Informasi disediakan dalam dua bahasa, yaitu Bahasa Indonesia dan Bahasa Inggris."
+                            else
+                                "Name: Audita Navira Early\n" +
+                                        "Student ID: 6706223077\n\n" +
+                                        "This application displays a list of herbal plants along with their benefits. The information is available in two languages: Indonesian and English."
+                        )
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = { showInfoDialog = false }) {
+                        Text(if (selectedLanguage == Language.ID) "Tutup" else "Close")
+                    }
+                }
+            )
+        }
+
     }
 }
 

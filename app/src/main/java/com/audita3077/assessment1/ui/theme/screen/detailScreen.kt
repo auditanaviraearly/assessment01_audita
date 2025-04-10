@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.audita3077.assessment1.R
-import com.audita3077.assessment1.ui.theme.Assessment1Theme
 import com.audita3077.assessment1.model.HerbalItem
+import com.audita3077.assessment1.ui.theme.Assessment1Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,7 +41,10 @@ fun DetailScreen(navController: NavHostController, herbalItem: HerbalItem) {
                 title = { Text(text = herbalItem.name) },
                 navigationIcon = {
                     IconButton(onClick = { navController.navigateUp() }) {
-                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back"
+                        )
                     }
                 }
             )
@@ -66,7 +69,6 @@ fun DetailScreen(navController: NavHostController, herbalItem: HerbalItem) {
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
-            // Menampilkan daftar kategori yang bisa diperluas
             items(descriptions.toList()) { (category, description) ->
                 var expanded by remember { mutableStateOf(false) }
 
@@ -95,8 +97,23 @@ fun DetailScreen(navController: NavHostController, herbalItem: HerbalItem) {
 @Composable
 fun stringResourceByName(name: String): String {
     val context = LocalContext.current
+    val configuration = context.resources.configuration
+    val locale =
+        configuration.locales.get(0)
+
+    val newConfig = Configuration(configuration)
+    newConfig.setLocale(locale)
+    val localizedContext = context.createConfigurationContext(newConfig)
+
     val resId = context.resources.getIdentifier(name, "string", context.packageName)
-    return if (resId != 1) stringResource(id = resId) else "Data tidak ditemukan"
+
+    val result = if (resId != 0) {
+        localizedContext.resources.getString(resId)
+    } else {
+        "Not Found"
+    }
+    return result
+
 }
 
 @Preview(showBackground = true)
