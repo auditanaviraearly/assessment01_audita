@@ -29,18 +29,18 @@ fun getHerbalList(language: Language): List<HerbalItem> {
     return if (language == Language.ID) {
         listOf(
             HerbalItem("Jahe", R.drawable.image1, "Bermanfaat untuk meningkatkan daya tahan tubuh."),
-            HerbalItem("Kunyit", R.drawable.image1, "Membantu mengurangi peradangan dan meningkatkan pencernaan."),
-            HerbalItem("Lengkuas", R.drawable.image1, "Baik untuk kesehatan pencernaan dan mengurangi nyeri."),
-            HerbalItem("Temulawak", R.drawable.image1, "Membantu meningkatkan nafsu makan dan kesehatan hati."),
-            HerbalItem("Serai", R.drawable.image1, "Memiliki sifat antibakteri dan baik untuk detoksifikasi.")
+            HerbalItem("Kunyit", R.drawable.kunyit, "Membantu mengurangi peradangan dan meningkatkan pencernaan."),
+            HerbalItem("Lengkuas", R.drawable.lengkuas, "Baik untuk kesehatan pencernaan dan mengurangi nyeri."),
+            HerbalItem("Temulawak", R.drawable.temulawak, "Membantu meningkatkan nafsu makan dan kesehatan hati."),
+            HerbalItem("Serai", R.drawable.serai, "Memiliki sifat antibakteri dan baik untuk detoksifikasi.")
         )
     } else {
         listOf(
             HerbalItem("Ginger", R.drawable.image1, "Beneficial for boosting the immune system."),
-            HerbalItem("Turmeric", R.drawable.image1, "Helps reduce inflammation and improve digestion."),
-            HerbalItem("Galangal", R.drawable.image1, "Good for digestive health and pain relief."),
-            HerbalItem("Java Turmeric", R.drawable.image1, "Helps increase appetite and liver health."),
-            HerbalItem("Lemongrass", R.drawable.image1, "Has antibacterial properties and is good for detoxification.")
+            HerbalItem("Turmeric", R.drawable.kunyit, "Helps reduce inflammation and improve digestion."),
+            HerbalItem("Galangal", R.drawable.lengkuas, "Good for digestive health and pain relief."),
+            HerbalItem("Java Turmeric", R.drawable.temulawak, "Helps increase appetite and liver health."),
+            HerbalItem("Lemongrass", R.drawable.serai, "Has antibacterial properties and is good for detoxification.")
         )
     }
 }
